@@ -17,3 +17,5 @@ const user: User = {
   name: "toma",
   age: 31,
 };
+
+console.log(user);
