@@ -1,13 +1,7 @@
 export {};
 
-interface carInterface {
-  brand: string;
-  model: string | number;
-  characteristics: string;
-}
+type stringovi = "Warning" | "Info" | "Error";
 
-const carr: carInterface = {
-  brand: "Audi",
-  model: "A6",
-  characteristics: "all",
-};
+type logEntry = [string, number, stringovi];
+
+const napravistringove: logEntry[] = [["Desila se greska 222", 22, "Info"]];
