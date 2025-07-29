@@ -65,3 +65,28 @@ function addOrder(
 }
 
 console.log(addOrder("Marko", "Beograd", 11000, "monitor", 200, "rsd"));
+
+namespace Chat {
+  export function send(message: string): void {
+    console.log(`message was sent to chat ${message}`);
+  }
+}
+Chat.send("test");
+
+namespace BudgetTracker {
+  export function addExpense(expense: string, amount: number): void {
+    const expenses = getAllExpenses();
+
+    expenses.push({ expense: expense, amount: amount });
+
+    localStorage.setItem("expenses", JSON.stringify(expenses));
+  }
+
+  export function getAllExpenses() {
+    const data = localStorage.getItem("expenses");
+    return data ? JSON.parse(data) : [];
+  }
+}
+
+BudgetTracker.addExpense("new PC", 1000);
+BudgetTracker.addExpense("new mouse", 90);
